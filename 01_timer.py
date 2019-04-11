@@ -12,6 +12,7 @@ def test2():
     for i in range(10000):
         li += [i]
 
+
 def test3():
     li = [i for i in range(10000)]
 
