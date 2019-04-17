@@ -13,12 +13,19 @@ class SingleLink(object):
     """
     def __init__(self):
         self.__head = None
-        self.__foot = None
 
     def is_empty(self):
+        """
+        判断链表是否为空
+        :return:
+        """
         return not self.__head
 
     def length(self):
+        """
+        获取链表的长度
+        :return:
+        """
         count = 0
         cur = self.__head
         while cur:
@@ -27,6 +34,10 @@ class SingleLink(object):
         return count
 
     def travel(self):
+        """
+        遍历链表
+        :return:
+        """
         cur = self.__head
         while cur:
             print(cur.data, end=' ')
@@ -34,11 +45,21 @@ class SingleLink(object):
         print('')
 
     def add(self, item):
+        """
+        在头部添加元素
+        :param item:
+        :return:
+        """
         node = Node(item)
         node.next = self.__head
         self.__head = node
 
     def append(self, item):
+        """
+        在尾部添加元素
+        :param item:
+        :return:
+        """
         node = Node(item)
         if self.is_empty():
             self.__head = node
@@ -51,6 +72,12 @@ class SingleLink(object):
                 cur = cur.next
 
     def insert(self, pos, item):
+        """
+        在指定位置添加元素
+        :param pos:
+        :param item:
+        :return:
+        """
         if pos <= 0:
             self.add(item)
         elif pos > self.length():
@@ -65,6 +92,11 @@ class SingleLink(object):
         cur.next = node
 
     def remove(self, item):
+        """
+        移除指定元素
+        :param item:
+        :return:
+        """
         if self.__head is None:
             return
         cur = self.__head
@@ -77,6 +109,11 @@ class SingleLink(object):
             cur = cur.next
 
     def search(self, item):
+        """
+        查找元素
+        :param item:
+        :return:
+        """
         cur = self.__head
         while cur is not None:
             if cur.data == item:
